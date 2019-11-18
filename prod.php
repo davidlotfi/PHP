@@ -42,9 +42,9 @@
 
    <?php
     while ($donnes = $reponse->fetch()) {
-      $datetime1 = $donnes['date'];
-      $datetimecurrent = date("Y-m-d H:i:s");
-      $interval=$datetimecurrent - $datetime1;
+      $datebd = strtotime($donnes['date']);
+      $datetimecurrent = strtotime(date("Y-m-d H:i:s"));
+      $interval = $datetimecurrent - $datebd;
 
    ?>
 
@@ -55,7 +55,7 @@
              <h5 class="text-success"><?php echo  $donnes['prix']; ?> DA</h5>
              <p class="card-text"><?php echo  $donnes['name']; ?>. </p>
              <small class="text-muted" style="float:right"><?php echo  $donnes['date']; ?></small><br>
-             <small class="text-muted" style="float:right"><?php $interval; ?> mins</small>
+             <small class="text-muted" style="float:right"><?php echo $interval; ?> mins</small>
 
            </div>
          </div>
