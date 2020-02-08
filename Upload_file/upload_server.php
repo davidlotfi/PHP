@@ -20,7 +20,7 @@
         echo "</pre>";
       $tmp_file = $_FILES['image']['tmp_name'];
       $target_file = basename($_FILES['image']['name']);  
-      $upload_dir = "imgupload";
+      $upload_dir = "images";
       if(move_uploaded_file($tmp_file,$upload_dir."/".$target_file)){
 
            $message = "sucessful";
